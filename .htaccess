@@ -1,0 +1,10 @@
+# Защита резервной базы заказов от прямого доступа из браузера
+<FilesMatch "^\.orders_db_log">
+    <IfModule authz_core_module>
+        Require all denied
+    </IfModule>
+    <IfModule !authz_core_module>
+        Order Deny,Allow
+        Deny from all
+    </IfModule>
+</FilesMatch>

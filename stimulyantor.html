@@ -1,0 +1,2330 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рідкокристалічний Стимулятор Професора Сергеєва</title>
+    <!-- Подключаем современный шрифт Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- ДИЗАЙН-СИСТЕМА И НАСТРОЙКИ --- */
+        :root {
+            --primary: #2563eb;
+            --primary-light: #eff6ff;
+            --primary-hover: #1d4ed8;
+            --secondary: #4f46e5;
+            --secondary-light: #e0e7ff;
+            --accent: #10b981;
+            --accent-hover: #059669;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --gray-light: #f1f5f9;
+            --gray: #64748b;
+            --gray-dark: #334155;
+            --border: #e2e8f0;
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --font: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.08);
+            --shadow-lg: 0 20px 40px -15px rgba(15, 23, 42, 0.12);
+        }
+
+        /* --- СБРОС СТИЛЕЙ И БАЗОВЫЕ КЛАССЫ --- */
+        .stimulator-body * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: var(--font);
+        }
+
+        .stimulator-body {
+            color: var(--gray-dark);
+            line-height: 1.6;
+            background-color: var(--light);
+            font-size: 16px;
+            padding: 20px 0;
+        }
+
+        .stim-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- СЕКЦИИ --- */
+        .stim-section {
+            padding: 80px 0;
+            background: var(--white);
+            margin-bottom: 30px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+
+        .stim-section.bg-alt {
+            background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+        }
+
+        .stim-section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .stim-section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 50px auto;
+        }
+
+        /* --- КНОПКИ --- */
+        .stim-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 32px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            gap: 10px;
+            width: 100%;
+        }
+
+        @media(min-width: 768px) {
+            .stim-btn {
+                width: auto;
+            }
+        }
+
+        .stim-btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            box-shadow: 0 10px 20px -10px rgba(37, 99, 235, 0.5);
+        }
+
+        .stim-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 25px -10px rgba(37, 99, 235, 0.6);
+            opacity: 0.95;
+        }
+
+        .stim-btn-accent {
+            background: var(--accent);
+            color: var(--white);
+            box-shadow: 0 10px 20px -10px rgba(16, 185, 129, 0.5);
+        }
+
+        .stim-btn-accent:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 25px -10px rgba(16, 185, 129, 0.6);
+            background: var(--accent-hover);
+        }
+
+        /* --- HERO SECTION --- */
+        .stim-hero {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            align-items: center;
+            padding: 60px 0;
+        }
+
+        @media(min-width: 992px) {
+            .stim-hero {
+                grid-template-columns: 1.2fr 0.8fr;
+            }
+        }
+
+        .stim-hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .stim-badge {
+            background-color: var(--primary-light);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+            display: inline-block;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+        }
+
+        .stim-hero-title {
+            font-size: 44px;
+            line-height: 1.15;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .stim-hero-title span {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stim-hero-descr {
+            font-size: 18px;
+            color: var(--gray-dark);
+            margin-bottom: 36px;
+            font-weight: 400;
+        }
+
+        .stim-hero-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
+        .stim-hero-feat-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .stim-hero-feat-item svg {
+            width: 24px;
+            height: 24px;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .stim-hero-media {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .stim-image-container {
+            position: relative;
+            width: 100%;
+            max-width: 420px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            background: var(--white);
+            border: 8px solid var(--white);
+            transition: var(--transition);
+        }
+
+        .stim-image-container:hover {
+            transform: scale(1.02) rotate(1deg);
+        }
+
+        .stim-main-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .stim-img-sub {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            width: 160px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 4px solid var(--white);
+            background: var(--white);
+            z-index: 10;
+            transition: var(--transition);
+        }
+
+        .stim-img-sub:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+
+        @media(max-width: 768px) {
+            .stim-img-sub {
+                width: 120px;
+                bottom: -10px;
+                left: -10px;
+            }
+        }
+
+        /* --- THEORY SECTION --- */
+        .stim-theory {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        @media(min-width: 992px) {
+            .stim-theory {
+                grid-template-columns: 1.2fr 0.8fr;
+            }
+        }
+
+        .stim-theory-text p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--gray-dark);
+        }
+
+        .stim-theory-card {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%);
+            border-radius: var(--radius-md);
+            padding: 30px;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+        }
+
+        .stim-theory-card h4 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* --- GRID CARDS (INDICATIONS) --- */
+        .stim-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        @media(min-width: 768px) {
+            .stim-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(min-width: 992px) {
+            .stim-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .stim-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .stim-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(37, 99, 235, 0.2);
+        }
+
+        .stim-card-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .stim-card-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .stim-card-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .stim-card-text {
+            font-size: 15px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* --- STEPS SECTION --- */
+        .stim-steps {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        @media(min-width: 768px) {
+            .stim-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(min-width: 992px) {
+            .stim-steps {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .stim-step {
+            position: relative;
+            background: var(--white);
+            padding: 30px 24px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .stim-step-num {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 18px;
+            margin: 0 auto 20px auto;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+        }
+
+        .stim-step-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .stim-step-text {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* --- ORDER SECTION & FORM --- */
+        .stim-order-wrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        @media(min-width: 992px) {
+            .stim-order-wrapper {
+                grid-template-columns: 0.9fr 1.1fr;
+            }
+        }
+
+        .stim-order-info {
+            background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%);
+            color: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stim-price-box {
+            margin: 30px 0;
+            background: rgba(255,255,255,0.05);
+            padding: 24px;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stim-price-label {
+            font-size: 14px;
+            color: var(--gray-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .stim-price-value {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--accent);
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+        }
+
+        .stim-price-value span {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .stim-price-value .stim-price-old,
+        .stim-price-value .stim-price-old span {
+            font-size: 20px;
+            text-decoration: line-through;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .stim-order-benefits {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .stim-order-benefits li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .stim-order-benefits li svg {
+            width: 20px;
+            height: 20px;
+            color: var(--accent);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .stim-form {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+        }
+
+        .stim-form-group {
+            margin-bottom: 24px;
+        }
+
+        .stim-form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .stim-input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-size: 15px;
+            color: var(--dark);
+            outline: none;
+            transition: var(--transition);
+            background-color: var(--light);
+        }
+
+        .stim-input:focus {
+            border-color: var(--primary);
+            background-color: var(--white);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+        }
+
+        .stim-quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .stim-qty-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-sm);
+            border: 1.5px solid var(--border);
+            background: var(--white);
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stim-qty-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .stim-qty-val {
+            width: 60px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 700;
+            border: none;
+            outline: none;
+            background: transparent;
+        }
+
+        .stim-delivery-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .stim-delivery-opt {
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 14px 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            background: var(--light);
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .stim-delivery-opt svg {
+            width: 24px;
+            height: 24px;
+            color: var(--gray);
+            transition: var(--transition);
+        }
+
+        .stim-delivery-opt.active {
+            border-color: var(--primary);
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .stim-delivery-opt.active svg {
+            color: var(--primary);
+        }
+
+        /* Способы оплаты */
+        .stim-payment-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .stim-payment-opt {
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 14px 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            background: var(--light);
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .stim-payment-opt svg {
+            width: 24px;
+            height: 24px;
+            color: var(--gray);
+            transition: var(--transition);
+        }
+
+        .stim-payment-opt.active {
+            border-color: var(--primary);
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .stim-payment-opt.active svg {
+            color: var(--primary);
+        }
+
+        /* Автокомплит Новой Почты */
+        .np-autocomplete-container {
+            position: relative;
+        }
+
+        .np-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-md);
+            z-index: 100;
+            max-height: 220px;
+            overflow-y: auto;
+            display: none;
+            margin-top: 4px;
+        }
+
+        .np-suggestion-item {
+            padding: 12px 16px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: var(--transition);
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .np-suggestion-item:last-child {
+            border-bottom: none;
+        }
+
+        .np-suggestion-item:hover {
+            background-color: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .np-loading-spinner {
+            position: absolute;
+            right: 14px;
+            top: 14px;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border);
+            border-top: 2px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            display: none;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Состояние отправки формы */
+        .stim-form-status {
+            padding: 16px;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            margin-top: 20px;
+            display: none;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .stim-form-status.success {
+            background-color: #ecfdf5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+            display: block;
+        }
+
+        .stim-form-status.error {
+            background-color: #fef2f2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+            display: block;
+        }
+
+        /* Уход за прибором */
+        .stim-care-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            margin-top: 30px;
+        }
+
+        .stim-care-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .stim-care-title svg {
+            width: 24px;
+            height: 24px;
+            color: var(--primary);
+        }
+
+        .stim-care-list {
+            list-style: none;
+        }
+
+        .stim-care-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 14px;
+            font-size: 15px;
+            color: var(--gray-dark);
+        }
+
+        .stim-care-list li::before {
+            content: "•";
+            position: absolute;
+            left: 8px;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 18px;
+            top: -2px;
+        }
+
+
+
+        /* --- СКРЫТИЕ/ПОКАЗ ЯЗЫКОВЫХ БЛОКОВ --- */
+        [data-lang] {
+            display: none !important;
+        }
+        body.lang-ru [data-lang="ru"] {
+            display: revert !important;
+        }
+        body.lang-ua [data-lang="ua"] {
+            display: revert !important;
+        }
+        body.lang-en [data-lang="en"] {
+            display: revert !important;
+        }
+
+        /* --- СТИЛИ ДЛЯ МОДАЛЬНОГО ОКНА УСПЕШНОГО ЗАКАЗА --- */
+        .stim-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .stim-modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .stim-modal-card {
+            background: var(--white);
+            padding: 40px 24px;
+            border-radius: var(--radius-lg);
+            max-width: 460px;
+            width: 90%;
+            text-align: center;
+            box-shadow: var(--shadow-lg), 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+            transform: scale(0.9) translateY(20px);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 1px solid var(--border);
+        }
+
+        .stim-modal-overlay.active .stim-modal-card {
+            transform: scale(1) translateY(0);
+        }
+
+        .stim-modal-icon {
+            width: 72px;
+            height: 72px;
+            background-color: #ecfdf5;
+            color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px auto;
+            border: 2.5px solid #a7f3d0;
+            animation: pulse-success 2s infinite;
+        }
+
+        @keyframes pulse-success {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        .stim-modal-icon svg {
+            width: 36px;
+            height: 36px;
+        }
+
+        .stim-modal-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .stim-modal-text {
+            font-size: 15px;
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+        .stim-modal-btn {
+            max-width: 200px;
+            margin: 0 auto;
+        }
+
+        /* --- ГЛОБАЛЬНЫЙ СБРОС И БЛОКИРОВКА ГОРИЗОНТАЛЬНОГО СКРОЛЛА --- */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        /* --- МЕДИА-ЗАПРОСЫ ДЛЯ МОБИЛЬНОЙ ОПТИМИЗАЦИИ --- */
+        @media (max-width: 768px) {
+            .stim-section {
+                padding: 40px 0;
+            }
+            .stim-section-title {
+                font-size: 28px;
+                margin-bottom: 12px;
+            }
+            .stim-section-subtitle {
+                font-size: 16px;
+                margin-bottom: 30px;
+                padding: 0 10px;
+            }
+            .stim-hero-title {
+                font-size: 32px;
+            }
+            .stim-hero-descr {
+                font-size: 16px;
+                margin-bottom: 24px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .stim-container {
+                padding: 0 16px;
+            }
+            .stim-form {
+                padding: 24px 16px;
+                border-radius: var(--radius-md);
+            }
+            .stim-order-info {
+                padding: 24px;
+                border-radius: var(--radius-md);
+            }
+            .stim-delivery-options {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            .stim-payment-options {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            .stim-hero-features {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .stim-price-value {
+                font-size: 30px;
+            }
+        }
+
+        /* --- СТИЛИ ДЛЯ ХЕДЕРА --- */
+        .stim-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 30px;
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .stim-logo {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--dark);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stim-header-phone {
+            display: inline-flex;
+            align-items: center;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .stim-header-phone:hover {
+            color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Языковой переключатель встроенный */
+        .stim-lang-switcher {
+            display: flex;
+            gap: 4px;
+            background: rgba(241, 245, 249, 0.8);
+            border: 1px solid var(--border);
+            padding: 4px;
+            border-radius: 30px;
+            transition: var(--transition);
+        }
+
+        .stim-lang-btn {
+            background: transparent;
+            border: none;
+            padding: 6px 14px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--gray-dark);
+            cursor: pointer;
+            border-radius: 20px;
+            transition: var(--transition);
+            text-transform: uppercase;
+        }
+
+        .stim-lang-btn:hover {
+            color: var(--primary);
+        }
+
+        .stim-lang-btn.active {
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: 0 4px 12px -2px rgba(37, 99, 235, 0.3);
+        }
+
+        /* --- СТИЛИ ДЛЯ ПОДВАЛА --- */
+        .stim-footer {
+            background: var(--white);
+            padding: 30px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+            border-radius: var(--radius-md) var(--radius-md) 0 0;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.02);
+        }
+
+        .footer-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .header-flex {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+            .stim-header {
+                padding: 12px 0;
+                margin-bottom: 20px;
+            }
+            .header-right {
+                width: 100%;
+                justify-content: center;
+                gap: 16px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-flex {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            .stim-footer {
+                padding: 24px 0;
+                margin-top: 30px;
+            }
+            .stim-footer div {
+                text-align: center !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-right {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .stim-lang-switcher {
+                padding: 3px;
+            }
+            .stim-lang-btn {
+                padding: 4px 10px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body class="stimulator-body lang-ua">
+
+<!-- ХЕДЕР С КОНТАКТАМИ И ЯЗЫКАМИ -->
+<header class="stim-header">
+    <div class="stim-container header-flex">
+        <div class="stim-logo">
+            <span data-lang="ru">Стимулятор Профессора Сергеева</span>
+            <span data-lang="ua">Стимулятор Професора Сергеєва</span>
+            <span data-lang="en">Professor Sergeev Stimulator</span>
+        </div>
+        <div class="header-right">
+            <a href="tel:+380503557476" class="stim-header-phone">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;margin-right:8px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                +38 (050) 355-74-76
+            </a>
+            
+            <!-- ЯЗЫКОВОЙ ПЕРЕКЛЮЧАТЕЛЬ -->
+            <div class="stim-lang-switcher">
+                <button class="stim-lang-btn active" data-change-lang="ua">UA</button>
+                <button class="stim-lang-btn" data-change-lang="ru">RU</button>
+                <button class="stim-lang-btn" data-change-lang="en">EN</button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="stim-container">
+    
+    <!-- HERO SECTION -->
+    <section class="stim-section bg-alt">
+        <div class="stim-hero">
+            <div class="stim-hero-content">
+                <span class="stim-badge">
+                    <span data-lang="ru">Разработка биофизика профессора Сергеева</span>
+                    <span data-lang="ua">Розробка біофізика професора Сергеєва</span>
+                    <span data-lang="en">Developed by Biophysicist Professor Sergeev</span>
+                </span>
+                
+                <h1 class="stim-hero-title">
+                    <span data-lang="ru">Жидкокристаллический <span>Стимулятор</span></span>
+                    <span data-lang="ua">Рідкокристалічний <span>Стимулятор</span></span>
+                    <span data-lang="en">Liquid Crystal <span>Stimulator</span></span>
+                </h1>
+                
+                <p class="stim-hero-descr">
+                    <span data-lang="ru">Уникальный прибор для защиты организма от вредного техногенного излучения и восстановления внутренних сил. Прибор работает по принципу полевого переноса информации живым клеткам, нейтрализуя патогенное влияние внешней среды.</span>
+                    <span data-lang="ua">Унікальний прилад для захисту організму від шкідливого техногенного випромінювання та відновлення внутрішніх сил. Прилад працює за принципом польового переносу інформації живим клітинам, нейтралізуючи патогенний вплив зовнішнього середовища.</span>
+                    <span data-lang="en">A unique device designed to protect the body from harmful electromagnetic radiation and restore internal vital energy. The device operates based on the field transfer of information to living cells, neutralizing pathogenic environmental factors.</span>
+                </p>
+                
+                <div class="stim-hero-features">
+                    <div class="stim-hero-feat-item">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span data-lang="ru">Срок действия прибора — 10 лет</span>
+                        <span data-lang="ua">Термін дії приладу — 10 років</span>
+                        <span data-lang="en">Operating lifetime — 10 years</span>
+                    </div>
+                    <div class="stim-hero-feat-item">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span data-lang="ru">Абсолютно безопасен</span>
+                        <span data-lang="ua">Абсолютно безпечний</span>
+                        <span data-lang="en">Absolutely safe</span>
+                    </div>
+                    <div class="stim-hero-feat-item">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span data-lang="ru">Улучшает кровообращение</span>
+                        <span data-lang="ua">Покращує кровообіг</span>
+                        <span data-lang="en">Improves blood circulation</span>
+                    </div>
+                    <div class="stim-hero-feat-item">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span data-lang="ru">Снимает болевые ощущения</span>
+                        <span data-lang="ua">Знімає больові відчуття</span>
+                        <span data-lang="en">Relieves pain and spasms</span>
+                    </div>
+                </div>
+                
+                <a href="#order-form-anchor" class="stim-btn stim-btn-primary">
+                    <span data-lang="ru">Купить за 500 грн</span>
+                    <span data-lang="ua">Придбати за 500 грн</span>
+                    <span data-lang="en">Buy for 500 UAH</span>
+                    <svg style="width:20px;height:20px" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+            </div>
+            
+            <div class="stim-hero-media">
+                <div class="stim-image-container">
+                    <img class="stim-main-img" src="./зображення_viber_2026-06-06_08-52-48-582.jpg" alt="Liquid Crystal Stimulator">
+                </div>
+                <div class="stim-img-sub">
+                    <img style="width:100%;height:auto;display:block;" src="./зображення_viber_2026-06-06_08-51-37-912.jpg" alt="Stimulator Details">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ТЕОРИЯ И ПРИНЦИП РАБОТЫ -->
+    <section class="stim-section">
+        <div class="stim-container">
+            <h2 class="stim-section-title">
+                <span data-lang="ru">Теория «Биогравитационного поля»</span>
+                <span data-lang="ua">Теорія «Біогравітаційного поля»</span>
+                <span data-lang="en">Theory of the 'Biogravitational Field'</span>
+            </h2>
+            <p class="stim-section-subtitle">
+                <span data-lang="ru">Научное обоснование разработки выдающегося биофизика, д.т.н., профессора Г. А. Сергеева</span>
+                <span data-lang="ua">Наукове обґрунтування розробки видатного радянського біофізика, д.т.н., професора Г. О. Сергеєва</span>
+                <span data-lang="en">Scientific foundation of the development by the renowned biophysicist, D.Sc., Professor G. A. Sergeev</span>
+            </p>
+            
+            <div class="stim-theory">
+                <div class="stim-theory-text">
+                    <p>
+                        <span data-lang="ru">По теории профессора Сергеева, все живые организмы на Земле управляются особым космическим полем — <strong>«Биогравитационным полем»</strong>. Именно это поле через информационную составляющую поддерживает нормальную работу клеток и способствует их быстрому восстановлению в случае повреждения.</span>
+                        <span data-lang="ua">За теорією професора Сергеєва, всі живі організми на Землі керуються особливим космічним полем — <strong>«Біогравітаційним полем»</strong>. Саме це поле через інформаційну складову підтримує нормальну роботу клітин та сприяє їхньому швидкому відновленню у разі ураження.</span>
+                        <span data-lang="en">According to Professor Sergeev's theory, all living organisms on Earth, including humans, are guided by a cosmic field called the <strong>'Biogravitational Field'</strong>. This field maintains normal cellular functions and aids cell recovery through its informational component.</span>
+                    </p>
+                    <p>
+                        <span data-lang="ru">В нашем организме за связь с этим полем отвечает специальный жидкий кристалл, входящий в состав холестерина. Его молекула имеет форму спиральной пружины и вибрирует под действием биогравитационного поля, передавая жизненную информацию каждой клетке.</span>
+                        <span data-lang="ua">У нашому організмі за зв'язку із цим полем відповідає спеціальний рідкий кристал, що входить до складу холестерину. Його молекула має форму спіральної пружини та вібрує під дією біогравітаційного поля, передаючи життєву інформацію кожній клітині.</span>
+                        <span data-lang="en">A special liquid crystal within cholesterol is responsible for connecting our body to this biogravitational field. Its molecule, shaped like a spiral spring, vibrates under the field's informational component, transferring crucial instructions to living cells.</span>
+                    </p>
+                    <p>
+                        <span data-lang="ru">Однако современное <strong>техногенное загрязнение</strong> нашей планеты (электромагнитные поля, излучение техники) создает помехи, что приводит к сбоям в работе клеток. Стимулятор решает эту проблему, выступая надежным «ретранслятором» природного поля.</span>
+                        <span data-lang="ua">Проте сучасне <strong>техногенне забруднення</strong> нашої планети (електромагнітні поля, випромінювання техніки) створює перешкоди, що призводить до збоїв у роботі клітин. Стимулятор вирішує цю проблему, виступаючи надійним «ретранслятором» природного поля.</span>
+                        <span data-lang="en">However, modern <strong>technological pollution</strong> (electromagnetic fields and radiation from electronics) interferes with this signal, causing cell and organ dysfunction. The Stimulator resolves this by acting as a reliable 'receiver' of the natural field.</span>
+                    </p>
+                </div>
+                <div class="stim-theory-card">
+                    <h4>
+                        <span data-lang="ru">Состав и структура прибора</span>
+                        <span data-lang="ua">Склад та структура приладу</span>
+                        <span data-lang="en">Device Composition & Structure</span>
+                    </h4>
+                    <p style="font-size: 15px; color: var(--gray-dark); line-height: 1.7;">
+                        <span data-lang="ru">Стимулятор изготовлен из синтетических полимерных материалов, легированных органическими, неорганическими, минеральными и биологически активными веществами с добавлением жидкого кристалла, синтезированного из холестерина.</span>
+                        <span data-lang="ua">Стимулятор виготовлений із синтетичних полімерних матеріалів, легованих органічними, неорганічними, мінеральними та біологічно активними речовинами з додаванням рідкого кристала, синтезованого з холестерину.</span>
+                        <span data-lang="en">The Stimulator is made from synthetic polymer materials alloyed with organic, inorganic, mineral, and biologically active substances, along with liquid crystals synthesized from cholesterol.</span>
+                    </p>
+                    <p style="font-size: 15px; color: var(--gray-dark); margin-top: 15px; line-height: 1.7;">
+                        <span data-lang="ru">Эффект взаимодействия стимулятора с организмом возникает благодаря полевому переносу информации непосредственно клеткам. Его поле полностью совместимо с природным полем здоровой живой клетки.</span>
+                        <span data-lang="ua">Ефект взаємодії стимулятора з організмом виникає завдяки польовому переносу інформації безпосередньо клітинам. Його поле повністю сумісне з природним полем здорової живої клітини.</span>
+                        <span data-lang="en">The interaction effect between the Stimulator and the body manifests through field-based information transfer to living cells. The Stimulator's field is fully compatible with the natural field of healthy cells.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПОКАЗАНИЯ К ПРИМЕНЕНИЮ -->
+    <section class="stim-section bg-alt">
+        <div class="stim-container">
+            <h2 class="stim-section-title">
+                <span data-lang="ru">При каких состояниях эффективен прибор?</span>
+                <span data-lang="ua">При яких станах ефективний прилад?</span>
+                <span data-lang="en">When is the device effective?</span>
+            </h2>
+            <p class="stim-section-subtitle">
+                <span data-lang="ru">Стимулятор помогает организму мобилизовать собственные силы и стабилизировать работу основных систем жизнедеятельности</span>
+                <span data-lang="ua">Стимулятор допомагає організму мобілізувати власні сили та стабілізувати роботу основних систем життєдіяльності</span>
+                <span data-lang="en">The Stimulator helps the body mobilize its own healing resources and stabilizes major life support systems</span>
+            </p>
+            
+            <div class="stim-grid">
+                <!-- Карточка 1 -->
+                <div class="stim-card">
+                    <div class="stim-card-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="stim-card-title">
+                        <span data-lang="ru">Снятие боли и отеков</span>
+                        <span data-lang="ua">Зняття болю та набряків</span>
+                        <span data-lang="en">Pain & Swelling Relief</span>
+                    </h3>
+                    <p class="stim-card-text">
+                        <span data-lang="ru">Способствует рассасыванию отеков, ликвидации гематом после полученных травм, существенно ослабляет любые болевые ощущения.</span>
+                        <span data-lang="ua">Сприяє розсмоктуванню набряків, ліквідації гематом після отриманих травм, істотно послаблює будь-які больові відчуття.</span>
+                        <span data-lang="en">Promotes the absorption of edema, eliminates hematomas after injuries, and significantly reduces any pain sensations.</span>
+                    </p>
+                </div>
+                <!-- Карточка 2 -->
+                <div class="stim-card">
+                    <div class="stim-card-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </div>
+                    <h3 class="stim-card-title">
+                        <span data-lang="ru">Сердце и кровообращение</span>
+                        <span data-lang="ua">Серце та кровообіг</span>
+                        <span data-lang="en">Heart & Circulation</span>
+                    </h3>
+                    <p class="stim-card-text">
+                        <span data-lang="ru">Эффективен при сердечной недостаточности и послеинфарктных состояниях. Помогает предотвращать распад тромбоцитов, стабилизирует агрегационное состояние крови.</span>
+                        <span data-lang="ua">Ефективний при серцевій недостатності та післяінфарктних станах. Допомагає запобігати розпаду тромбоцитів, стабілізує агрегаційний стан крові.</span>
+                        <span data-lang="en">Effective for heart failure and post-infarction states. Helps prevent platelet breakdown, stabilizing the aggregation state of blood.</span>
+                    </p>
+                </div>
+                <!-- Карточка 3 -->
+                <div class="stim-card">
+                    <div class="stim-card-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h3 class="stim-card-title">
+                        <span data-lang="ru">Защита от ЭМ-полей</span>
+                        <span data-lang="ua">Захист від ЕМ-полів</span>
+                        <span data-lang="en">EMF Protection</span>
+                    </h3>
+                    <p class="stim-card-text">
+                        <span data-lang="ru">Надежно защищает человека от вредного электромагнитного фона при длительной работе с компьютером или просмотре телевизора.</span>
+                        <span data-lang="ua">Надійно захищає людину від шкідливого електромагнітного фону при тривалій роботі з комп'ютером або перегляді телевізора.</span>
+                        <span data-lang="en">Reliably protects humans from harmful electromagnetic background radiation during prolonged computer work or TV watching.</span>
+                    </p>
+                </div>
+                <!-- Карточка 4 -->
+                <div class="stim-card">
+                    <div class="stim-card-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    </div>
+                    <h3 class="stim-card-title">
+                        <span data-lang="ru">Суставы и позвоночник</span>
+                        <span data-lang="ua">Суглоби та хребет</span>
+                        <span data-lang="en">Joints & Spine</span>
+                    </h3>
+                    <p class="stim-card-text">
+                        <span data-lang="ru">Показан при остеохондрозе, полиартрите, варикозном расширении вен и хронических заболеваниях суставов. Предотвращает отложение солей.</span>
+                        <span data-lang="ua">Показаний при остеохондрозі, поліартриті, варикозному розширенні вен та хронічних захворюваннях суглобів. Запобігає відкладенню солей.</span>
+                        <span data-lang="en">Indicated for osteochondrosis, polyarthritis, varicose veins, and various joint disorders. Helps prevent salt accumulation.</span>
+                    </p>
+                </div>
+                <!-- Карточка 5 -->
+                <div class="stim-card">
+                    <div class="stim-card-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 9.172V5L8 4z"></path></svg>
+                    </div>
+                    <h3 class="stim-card-title">
+                        <span data-lang="ru">ЖКТ, Печень и Почки</span>
+                        <span data-lang="ua">ШКТ, Печінка та Нирки</span>
+                        <span data-lang="en">GI, Liver & Kidneys</span>
+                    </h3>
+                    <p class="stim-card-text">
+                        <span data-lang="ru">Помогает стабилизировать работу органов пищеварения, печени, поджелудочной железы (при сахарном диабете) и почек.</span>
+                        <span data-lang="ua">Допомагає стабілізувати роботу органів травлення, печінки, підшлункової залози (при цукровому діабеті) та нирок.</span>
+                        <span data-lang="en">Helps normalize the function of the digestive tract, liver, kidneys, and pancreas (particularly beneficial in diabetes).</span>
+                    </p>
+                </div>
+                <!-- Карточка 6 -->
+                <div class="stim-card">
+                    <div class="stim-card-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </div>
+                    <h3 class="stim-card-title">
+                        <span data-lang="ru">Снимает болевые ощущения</span>
+                        <span data-lang="ua">Стрес та втома</span>
+                        <span data-lang="en">Stress & Fatigue</span>
+                    </h3>
+                    <p class="stim-card-text">
+                        <span data-lang="ru">Повышает устойчивость организма к стрессам и радиационному фону. Помогает при синдроме хронической усталости и постинсультных состояниях.</span>
+                        <span data-lang="ua">Підвищує стійкість організму до стресів та радіаційного фону. Допомагає при синдромі хронічної втоми та постинсультних станах.</span>
+                        <span data-lang="en">Increases the body's resistance to stress and radiation. Highly effective for chronic fatigue syndrome and post-stroke recovery.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ИНСТРУКЦИЯ ПО ПРИМЕНЕНИЮ -->
+    <section class="stim-section">
+        <div class="stim-container">
+            <h2 class="stim-section-title">
+                <span data-lang="ru">Как использовать прибор?</span>
+                <span data-lang="ua">Як використовувати прилад?</span>
+                <span data-lang="en">How to use the device?</span>
+            </h2>
+            <p class="stim-section-subtitle">
+                <span data-lang="ru">Простые правила и рекомендации для получения максимального терапевтического эффекта</span>
+                <span data-lang="ua">Прості правила та рекомендації для отримання максимального терапевтичного ефекту</span>
+                <span data-lang="en">Simple instructions and guidelines for achieving the maximum therapeutic effect</span>
+            </p>
+            
+            <div class="stim-steps">
+                <div class="stim-step">
+                    <div class="stim-step-num">1</div>
+                    <h4 class="stim-step-title">
+                        <span data-lang="ru">Подготовка</span>
+                        <span data-lang="ua">Підготовка</span>
+                        <span data-lang="en">Preparation</span>
+                    </h4>
+                    <p class="stim-step-text">
+                        <span data-lang="ru">Перед применением прибор желательно поместить в чистый марлевый мешочек для удобства использования.</span>
+                        <span data-lang="ua">Перед застосуванням прилад бажано помістити в чистий марлевий мішечок для зручності використання.</span>
+                        <span data-lang="en">Before use, it is recommended to place the Stimulator inside a clean gauze pouch for convenience.</span>
+                    </p>
+                </div>
+                <div class="stim-step">
+                    <div class="stim-step-num">2</div>
+                    <h4 class="stim-step-title">
+                        <span data-lang="ru">Наложение</span>
+                        <span data-lang="ua">Накладення</span>
+                        <span data-lang="en">Application</span>
+                    </h4>
+                    <p class="stim-step-text">
+                        <span data-lang="ru">При возникновении боли любой природы стимулятор накладывают непосредственно на болезненную область.</span>
+                        <span data-lang="ua">При виникненні болю будь-якої природи стимулятор накладають безпосередньо на хворобливу ділянку.</span>
+                        <span data-lang="en">In case of pain of any nature, apply the Stimulator directly to the painful area.</span>
+                    </p>
+                </div>
+                <div class="stim-step">
+                    <div class="stim-step-num">3</div>
+                    <h4 class="stim-step-title">
+                        <span data-lang="ru">Экспозиция</span>
+                        <span data-lang="ua">Експозиція</span>
+                        <span data-lang="en">Exposure</span>
+                    </h4>
+                    <p class="stim-step-text">
+                        <span data-lang="ru">Время применения варьируется от 30 минут (астма, горло) до наложения на всю ночь (остеохондроз, диабет).</span>
+                        <span data-lang="ua">Час застосування варіюється від 30 хвилин (астма, горло) до накладання на всю ніч (остеохондроз, діабет).</span>
+                        <span data-lang="en">Application time ranges from 30 minutes (for asthma, throat pain) to overnight attachment (for osteochondrosis, diabetes).</span>
+                    </p>
+                </div>
+                <div class="stim-step">
+                    <div class="stim-step-num">4</div>
+                    <h4 class="stim-step-title">
+                        <span data-lang="ru">Ношение при себе</span>
+                        <span data-lang="ua">Носіння при собі</span>
+                        <span data-lang="en">Carrying</span>
+                    </h4>
+                    <p class="stim-step-text">
+                        <span data-lang="ru">Для защиты от компьютера и при сердечных состояниях прибор носят как подвеску на уровне сердца.</span>
+                        <span data-lang="ua">Для захисту від комп'ютера та при серцевих станах прилад носять як підвіску на рівні серця.</span>
+                        <span data-lang="en">For heart support and computer protection, wear the device as a pendant at the level of the heart.</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Дополнительный блок ухода -->
+            <div class="stim-care-card">
+                <div class="stim-care-title">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                    <span data-lang="ru">Важные указания по уходу за стимулятором</span>
+                    <span data-lang="ua">Важливі вказівки щодо догляду за стимулятором</span>
+                    <span data-lang="en">Important Stimulator Care Instructions</span>
+                </div>
+                <ul class="stim-care-list">
+                    <li>
+                        <span data-lang="ru"><strong>Восстановление активности:</strong> дважды в неделю облучайте стимулятор ультрафиолетом (солнечным светом или лампой) в течение 10-15 минут.</span>
+                        <span data-lang="ua"><strong>Відновлення активності:</strong> двічі на тиждень опромінюйте стимулятор ультрафіолетом (сонячним світлом або лампою) протягом 10-15 хвилин.</span>
+                        <span data-lang="en"><strong>Restoring activity:</strong> Expose the Stimulator to ultraviolet light (sunlight or UV lamp) for 10-15 minutes twice a week.</span>
+                    </li>
+                    <li>
+                        <span data-lang="ru"><strong>Правила хранения:</strong> храните прибор при комнатной температуре, желательно в сухих травах и лепестках цветов.</span>
+                        <span data-lang="ua"><strong>Правила зберігання:</strong> зберігайте прилад при кімнатній температурі, бажано в сухому листі трав та пелюстках квітів.</span>
+                        <span data-lang="en"><strong>Storage:</strong> Store the device at room temperature, preferably in dry herbs and flower petals.</span>
+                    </li>
+                    <li>
+                        <span data-lang="ru"><strong>Транспортировка:</strong> при пересылке или перевозке заверните прибор в металлическую фольгу для экранирования от техногенных излучений.</span>
+                        <span data-lang="ua"><strong>Транспортування:</strong> під час пересилання чи перевезення загорніть прилад у металеву фольгу для екранування від техногенних випромінювань.</span>
+                        <span data-lang="en"><strong>Transportation:</strong> Wrap the Stimulator in metal foil during shipping or travel to shield it from technological EMF radiation.</span>
+                    </li>
+                    <li>
+                        <span data-lang="ru"><strong>Индивидуальное использование:</strong> при передаче другому лицу выдержите прибор в морозильной камере 4-6 часов, продезинфицируйте спиртом и облучайте солнечным светом 30 минут.</span>
+                        <span data-lang="ua"><strong>Індівідуальне використання:</strong> при передачі іншій особі витримайте прилад у морозильній камері 4-6 годин, продезінфікуйте спиртом та опромінюйте сонячним світлом 30 хвилин.</span>
+                        <span data-lang="en"><strong>Individual use:</strong> If passing it to another person, keep the device in the freezer for 4-6 hours, sterilize with alcohol, and expose to UV light for 30 minutes.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ФОРМА ЗАКАЗА (ЯКОРЬ) -->
+    <span id="order-form-anchor"></span>
+    <section class="stim-section bg-alt" style="margin-bottom:0;">
+        <div class="stim-container">
+            <h2 class="stim-section-title">
+                <span data-lang="ru">Оформление заказа</span>
+                <span data-lang="ua">Оформлення замовлення</span>
+                <span data-lang="en">Order Checkout</span>
+            </h2>
+            <p class="stim-section-subtitle">
+                <span data-lang="ru">Заполните простую форму ниже, чтобы получить жидкокристаллический стимулятор</span>
+                <span data-lang="ua">Заповніть просту форму нижче, щоб отримати рідкокристалічний стимулятор</span>
+                <span data-lang="en">Fill out the simple form below to order your Liquid Crystal Stimulator</span>
+            </p>
+            
+            <div class="stim-order-wrapper">
+                
+                <!-- Левый блок - информация о цене -->
+                <div class="stim-order-info">
+                    <div>
+                        <span class="stim-badge" style="background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.2);">
+                            <span data-lang="ru">Акционное предложение</span>
+                            <span data-lang="ua">Акційна пропозиція</span>
+                            <span data-lang="en">Special Offer</span>
+                        </span>
+                        <div class="stim-price-box">
+                            <div class="stim-price-label">
+                                <span data-lang="ru">Цена за 1 штуку</span>
+                                <span data-lang="ua">Ціна за 1 штуку</span>
+                                <span data-lang="en">Price per unit</span>
+                            </div>
+                            <div class="stim-price-value">
+                                500 <span data-lang="ru">грн</span><span data-lang="ua">грн</span><span data-lang="en">UAH</span>
+                                <span class="stim-price-old">800 <span data-lang="ru">грн</span><span data-lang="ua">грн</span><span data-lang="en">UAH</span></span>
+                            </div>
+                        </div>
+                        
+                        <ul class="stim-order-benefits">
+                            <li>
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                <span>
+                                    <span data-lang="ru">Быстрая доставка Новой Почтой по всей Украине</span>
+                                    <span data-lang="ua">Швидка доставка Новою Почтою по всій Україні</span>
+                                    <span data-lang="en">Fast delivery by Nova Poshta across Ukraine</span>
+                                </span>
+                            </li>
+                            <li>
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                <span>
+                                    <span data-lang="ru">Оплата при получении (наложенный платеж) или предоплата</span>
+                                    <span data-lang="ua">Оплата при отриманні (накладений платіж) або передоплата</span>
+                                    <span data-lang="en">Pay on delivery (COD) or prepay options</span>
+                                </span>
+                            </li>
+                            <li>
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                <span>
+                                    <span data-lang="ru">Гарантированный срок службы прибора — 10 лет</span>
+                                    <span data-lang="ua">Гарантований термін служби приладу — 10 років</span>
+                                    <span data-lang="en">Guaranteed service life — 10 years</span>
+                                </span>
+                            </li>
+                            <li>
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                <span>
+                                    <span data-lang="ru">Разработка Украинского Института экологии человека</span>
+                                    <span data-lang="ua">Розробка Українського Інституту екології людини</span>
+                                    <span data-lang="en">Developed by the Ukrainian Institute of Human Ecology</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div style="font-size:13px; color: var(--gray); border-top: 1px solid rgba(255,255,255,0.1); padding-top:20px;">
+                        <span data-lang="ru">* Наш менеджер свяжется с вами по указанному номеру телефона для подтверждения заказа. По всем вопросам: <a href="tel:+380503557476" style="color:var(--primary); text-decoration:none; font-weight:700;">+38 (050) 355-74-76</a></span>
+                        <span data-lang="ua">* Наш менеджер зв'яжеться з вами за вказаним номером телефону для підтвердження замовлення. З усіх питань: <a href="tel:+380503557476" style="color:var(--primary); text-decoration:none; font-weight:700;">+38 (050) 355-74-76</a></span>
+                        <span data-lang="en">* Our manager will contact you at the provided phone number to confirm the order. For any questions: <a href="tel:+380503557476" style="color:var(--primary); text-decoration:none; font-weight:700;">+38 (050) 355-74-76</a></span>
+                    </div>
+                </div>
+
+                <!-- Правый блок - интерактивная форма -->
+                <form id="stimulator-order-form" class="stim-form">
+                    <!-- Задаем API-ключ Новой Почты -->
+                    <input type="hidden" id="np-api-key" value="82cd98ce015b296f476c8d0f38a7de84">
+                    
+                    <div class="stim-form-group">
+                        <label class="stim-form-label" for="client-name">
+                            <span data-lang="ru">Фамилия, Имя *</span>
+                            <span data-lang="ua">Прізвище, Ім'я *</span>
+                            <span data-lang="en">Last Name, First Name *</span>
+                        </label>
+                        <input class="stim-input" type="text" id="client-name" name="name" required>
+                    </div>
+
+                    <div class="stim-form-group">
+                        <label class="stim-form-label" for="client-phone">
+                            <span data-lang="ru">Номер телефона *</span>
+                            <span data-lang="ua">Номер телефону *</span>
+                            <span data-lang="en">Phone Number *</span>
+                        </label>
+                        <input class="stim-input" type="tel" id="client-phone" name="phone" placeholder="+38 (0XX) XXX-XX-XX" maxlength="19" required>
+                    </div>
+
+                    <div class="stim-form-group">
+                        <label class="stim-form-label">
+                            <span data-lang="ru">Количество приборов</span>
+                            <span data-lang="ua">Кількість приладів</span>
+                            <span data-lang="en">Quantity</span>
+                        </label>
+                        <div class="stim-quantity-control">
+                            <button type="button" class="stim-qty-btn" id="qty-minus">-</button>
+                            <input class="stim-qty-val" type="number" id="qty-input" name="quantity" value="1" min="1" max="100" readonly>
+                            <button type="button" class="stim-qty-btn" id="qty-plus">+</button>
+                        </div>
+                        <div style="margin-top: 8px; font-size:14px; font-weight:600; color:var(--dark);">
+                            <span data-lang="ru">Общая сумма: <span class="total-price-val" style="color:var(--primary); font-size:18px;">500</span> грн.</span>
+                            <span data-lang="ua">Загальна сума: <span class="total-price-val" style="color:var(--primary); font-size:18px;">500</span> грн.</span>
+                            <span data-lang="en">Total Price: <span class="total-price-val" style="color:var(--primary); font-size:18px;">500</span> UAH.</span>
+                        </div>
+                    </div>
+
+                    <!-- Выбор способа доставки Новой Почтой -->
+                    <div class="stim-form-group">
+                        <label class="stim-form-label">
+                            <span data-lang="ru">Способ доставки Новой Почтой</span>
+                            <span data-lang="ua">Спосіб доставки Новою Поштою</span>
+                            <span data-lang="en">Nova Poshta Delivery Method</span>
+                        </label>
+                        <input type="hidden" id="delivery-method" name="delivery_method" value="warehouse">
+                        <div class="stim-delivery-options">
+                            <div class="stim-delivery-opt active" data-method="warehouse">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                                <span data-lang="ru">Отделение</span>
+                                <span data-lang="ua">Відділення</span>
+                                <span data-lang="en">Branch</span>
+                            </div>
+                            <div class="stim-delivery-opt" data-method="postomat">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                                <span data-lang="ru">Почтомат</span>
+                                <span data-lang="ua">Поштомат</span>
+                                <span data-lang="en">Postomat</span>
+                            </div>
+                            <div class="stim-delivery-opt" data-method="address">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h3m-6 0a1 1 0 001-1v-4a1 1 0 00-1-1h-2a1 1 0 00-1 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                                <span data-lang="ru">Адресная</span>
+                                <span data-lang="ua">Адресна</span>
+                                <span data-lang="en">Address</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Выбор Населенного Пункта -->
+                    <div class="stim-form-group np-autocomplete-container" id="np-city-container">
+                        <label class="stim-form-label" for="np-city-search">
+                            <span data-lang="ru">Город / Населенный пункт *</span>
+                            <span data-lang="ua">Місто / Село *</span>
+                            <span data-lang="en">City / Town *</span>
+                        </label>
+                        <input class="stim-input" type="text" id="np-city-search" required>
+                        <input type="hidden" id="np-city-ref" name="city_ref">
+                        <input type="hidden" id="np-city-name" name="city">
+                        <div class="np-suggestions" id="np-city-suggestions"></div>
+                        <div class="np-loading-spinner" id="np-city-spinner"></div>
+                    </div>
+
+                    <!-- Выбор Отделения / Почтомата Новой Почты -->
+                    <div class="stim-form-group" id="np-warehouse-container">
+                        <label class="stim-form-label" id="warehouse-field-label" for="np-warehouse-select">
+                            <span>Відділення *</span>
+                        </label>
+                        
+                        <!-- Список с автозагрузкой -->
+                        <select class="stim-input" id="np-warehouse-select" name="warehouse" required style="display:none;">
+                        </select>
+
+                        <!-- Альтернативное ручное текстовое поле -->
+                        <input class="stim-input" type="text" id="np-warehouse-manual" required>
+                    </div>
+
+                    <!-- Поле для Адресной Доставки -->
+                    <div class="stim-form-group" id="address-container" style="display:none;">
+                        <label class="stim-form-label" for="delivery-address">
+                            <span data-lang="ru">Адрес доставки (Улица, дом, квартира) *</span>
+                            <span data-lang="ua">Адреса доставки (Вулиця, будинок, квартира) *</span>
+                            <span data-lang="en">Delivery Address (Street, house, apt) *</span>
+                        </label>
+                        <input class="stim-input" type="text" id="delivery-address" name="address">
+                    </div>
+
+                    <!-- Выбор способа оплаты -->
+                    <div class="stim-form-group">
+                        <label class="stim-form-label">
+                            <span data-lang="ru">Способ оплаты</span>
+                            <span data-lang="ua">Спосіб оплати</span>
+                            <span data-lang="en">Payment Method</span>
+                        </label>
+                        <input type="hidden" id="payment-method" name="payment_method" value="cod">
+                        <div class="stim-payment-options">
+                            <div class="stim-payment-opt active" data-method="cod">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                                <span data-lang="ru">При получении</span>
+                                <span data-lang="ua">При отриманні</span>
+                                <span data-lang="en">On delivery</span>
+                            </div>
+                            <div class="stim-payment-opt" data-method="card">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                                <span data-lang="ru">На карту</span>
+                                <span data-lang="ua">На карту</span>
+                                <span data-lang="en">By card</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stim-form-group">
+                        <label class="stim-form-label" for="order-comment">
+                            <span data-lang="ru">Комментарий к заказу</span>
+                            <span data-lang="ua">Коментар до замовлення</span>
+                            <span data-lang="en">Order Comment</span>
+                        </label>
+                        <textarea class="stim-input" id="order-comment" name="comment" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="stim-btn stim-btn-accent" id="submit-btn" style="width:100%;">
+                        <span>Оформити замовлення</span>
+                    </button>
+
+                    <div class="stim-form-status" id="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- МОДАЛЬНОЕ ОКНО УСПЕШНОГО ЗАКАЗА -->
+    <div class="stim-modal-overlay" id="success-modal">
+        <div class="stim-modal-card">
+            <div class="stim-modal-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            <h3 class="stim-modal-title" id="modal-title">Замовлення прийнято!</h3>
+            <p class="stim-modal-text" id="modal-text">Дякуємо за ваше замовлення. Наш менеджер зв'яжеться з вами найближчим часом для підтвердження деталей.</p>
+            <button type="button" class="stim-btn stim-btn-accent stim-modal-btn" id="modal-close-btn">
+                <span>Чудово</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ПОДВАЛ (FOOTER) -->
+    <footer class="stim-footer">
+        <div class="stim-container footer-flex">
+            <div>
+                <p style="font-weight:700; color:var(--dark); margin-bottom:4px;">
+                    <span data-lang="ru">Жидкокристаллический Стимулятор</span>
+                    <span data-lang="ua">Рідкокристалічний Стимулятор</span>
+                    <span data-lang="en">Liquid Crystal Stimulator</span>
+                </p>
+                <p style="font-size:13px; color:var(--gray);">© 2026 Gorbunok Site. All rights reserved.</p>
+            </div>
+            <div style="text-align: right;">
+                <p style="font-size:13px; color:var(--gray); margin-bottom:4px;">
+                    <span data-lang="ru">По вопросам и консультациям:</span>
+                    <span data-lang="ua">З питань та консультацій:</span>
+                    <span data-lang="en">For questions and consultations:</span>
+                </p>
+                <a href="tel:+380503557476" class="stim-header-phone" style="font-size:15px;">
+                    +38 (050) 355-74-76
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+<script>
+    // СЛОВАРЬ ПЕРЕВОДОВ ДЛЯ JS-ЭЛЕМЕНТОВ
+    const translations = {
+        ru: {
+            title: "Жидкокристаллический Стимулятор Профессора Сергеева",
+            namePlaceholder: "Иванов Иван",
+            phonePlaceholder: "+38 (0XX) XXX-XX-XX",
+            addressPlaceholder: "ул. Крещатик, д. 1, кв. 10",
+            commentPlaceholder: "Ваши пожелания по заказу или доставке...",
+            cityPlaceholder: "Начните вводить название города...",
+            warehousePlaceholder: "Введите номер или адрес отделения вручную",
+            warehouseSelectDefault: "Сначала выберите город",
+            warehouseSelectBranch: "Выберите отделение *",
+            warehouseSelectLocker: "Выберите почтомат *",
+            warehouseLabelBranch: "Отделение Новой Почты *",
+            warehouseLabelLocker: "Почтомат Новой Почты *",
+            submitBtnText: "Оформить заказ",
+            submitBtnSending: "Отправка...",
+            successMessage: "Заказ успешно оформлен! Наш менеджер свяжется с вами в ближайшее время.",
+            errorMessage: "Возникла ошибка при оформлении заказа. Пожалуйста, попробуйте позже или свяжитесь с нами по телефону: +38 (050) 355-74-76.",
+            modalTitle: "Заказ принят!",
+            modalText: "Спасибо за ваш заказ. Наш менеджер свяжется с вами в ближайшее время для подтверждения деталей.",
+            modalCloseBtn: "Отлично"
+        },
+        ua: {
+            title: "Рідкокристалічний Стимулятор Професора Сергеєва",
+            namePlaceholder: "Іванов Іван",
+            phonePlaceholder: "+38 (0XX) XXX-XX-XX",
+            addressPlaceholder: "вул. Хрещатик, буд. 1, кв. 10",
+            commentPlaceholder: "Ваші побажання щодо замовлення чи доставки...",
+            cityPlaceholder: "Почніть вводити назву міста...",
+            warehousePlaceholder: "Введіть номер або адресу відділення вручную",
+            warehouseSelectDefault: "Спочатку оберіть місто",
+            warehouseSelectBranch: "Оберіть відділення *",
+            warehouseSelectLocker: "Оберіть почтомат *",
+            warehouseLabelBranch: "Відділення Нової Пошти *",
+            warehouseLabelLocker: "Поштомат Нової Пошти *",
+            submitBtnText: "Оформити замовлення",
+            submitBtnSending: "Відправка...",
+            successMessage: "Замовлення успішно оформлено! Наш менеджер зв'яжеться з вами найближчим часом.",
+            errorMessage: "Виникла помилка при оформленні замовлення. Будь ласка, спробуйте пізніше або зв'яжіться з нами по телефону: +38 (050) 355-74-76.",
+            modalTitle: "Замовлення прийнято!",
+            modalText: "Дякуємо за ваше замовлення. Наш менеджер зв'яжеться з вами найближчим часом для підтвердження деталей.",
+            modalCloseBtn: "Чудово"
+        },
+        en: {
+            title: "Liquid Crystal Stimulator of Professor Sergeev",
+            namePlaceholder: "Smith John",
+            phonePlaceholder: "+38 (0XX) XXX-XX-XX",
+            addressPlaceholder: "1 Main Street, apt 10",
+            commentPlaceholder: "Your delivery preferences, notes, etc...",
+            cityPlaceholder: "Start typing city name...",
+            warehousePlaceholder: "Enter branch number or address manually",
+            warehouseSelectDefault: "Select city first",
+            warehouseSelectBranch: "Select branch *",
+            warehouseSelectLocker: "Select locker *",
+            warehouseLabelBranch: "Nova Poshta Branch *",
+            warehouseLabelLocker: "Nova Poshta Postomat *",
+            submitBtnText: "Place Order",
+            submitBtnSending: "Sending...",
+            successMessage: "Order successfully placed! Our manager will contact you shortly.",
+            errorMessage: "An error occurred while placing your order. Please try again later or contact us by phone: +38 (050) 355-74-76.",
+            modalTitle: "Order Accepted!",
+            modalText: "Thank you for your order. Our manager will contact you shortly to confirm the details.",
+            modalCloseBtn: "Great"
+        }
+    };
+
+    let currentLang = 'ua'; // Дефолтный язык
+
+    function setLanguage(lang) {
+        if (!translations[lang]) lang = 'ua';
+        currentLang = lang;
+        
+        // 1. Меняем класс на body
+        document.body.className = 'stimulator-body lang-' + lang;
+        
+        // 2. Меняем title
+        document.title = translations[lang].title;
+        
+        // 3. Обновляем плейсхолдеры
+        document.getElementById('client-name').placeholder = translations[lang].namePlaceholder;
+        document.getElementById('client-phone').placeholder = translations[lang].phonePlaceholder;
+        document.getElementById('np-city-search').placeholder = translations[lang].cityPlaceholder;
+        document.getElementById('np-warehouse-manual').placeholder = translations[lang].warehousePlaceholder;
+        document.getElementById('delivery-address').placeholder = translations[lang].addressPlaceholder;
+        document.getElementById('order-comment').placeholder = translations[lang].commentPlaceholder;
+        
+        // 4. Обновляем лейблы и селекты в зависимости от метода доставки
+        const method = document.getElementById('delivery-method').value;
+        updateDeliveryFieldsUI(method);
+        
+        // 5. Кнопка отправки
+        const submitBtnSpan = document.querySelector('#submit-btn span');
+        if (submitBtnSpan && !document.getElementById('submit-btn').disabled) {
+            submitBtnSpan.textContent = translations[lang].submitBtnText;
+        }
+        
+        // 6. Активный класс в переключателе
+        document.querySelectorAll('.stim-lang-btn').forEach(btn => {
+            if (btn.getAttribute('data-change-lang') === lang) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+        
+        // 7. Обновляем тексты модального окна
+        const modalTitle = document.getElementById('modal-title');
+        const modalText = document.getElementById('modal-text');
+        const modalCloseBtnSpan = document.querySelector('#modal-close-btn span');
+        if (modalTitle) modalTitle.textContent = translations[lang].modalTitle;
+        if (modalText) modalText.textContent = translations[lang].modalText;
+        if (modalCloseBtnSpan) modalCloseBtnSpan.textContent = translations[lang].modalCloseBtn;
+
+        // Сохраняем в localStorage
+        localStorage.setItem('stim_lang', lang);
+    }
+
+    function updateDeliveryFieldsUI(method) {
+        const warehouseContainer = document.getElementById('np-warehouse-container');
+        const warehouseLabel = document.getElementById('warehouse-field-label');
+        const warehouseSelect = document.getElementById('np-warehouse-select');
+        const warehouseManual = document.getElementById('np-warehouse-manual');
+        const addressContainer = document.getElementById('address-container');
+        const addressInput = document.getElementById('delivery-address');
+        
+        const hasApiKey = document.getElementById('np-api-key').value.trim() !== '';
+        const cityRef = document.getElementById('np-city-ref').value;
+        
+        // Скрываем все специфичные поля по умолчанию
+        warehouseContainer.style.display = 'none';
+        warehouseSelect.required = false;
+        warehouseManual.required = false;
+        addressContainer.style.display = 'none';
+        addressInput.required = false;
+
+        if (method === 'warehouse') {
+            warehouseContainer.style.display = 'block';
+            warehouseLabel.textContent = translations[currentLang].warehouseLabelBranch;
+            
+            if (hasApiKey && cityRef) {
+                warehouseSelect.style.display = 'block';
+                warehouseManual.style.display = 'none';
+                warehouseSelect.required = true;
+            } else {
+                warehouseSelect.style.display = 'none';
+                warehouseManual.style.display = 'block';
+                warehouseManual.required = true;
+            }
+        } else if (method === 'postomat') {
+            warehouseContainer.style.display = 'block';
+            warehouseLabel.textContent = translations[currentLang].warehouseLabelLocker;
+            
+            if (hasApiKey && cityRef) {
+                warehouseSelect.style.display = 'block';
+                warehouseManual.style.display = 'none';
+                warehouseSelect.required = true;
+            } else {
+                warehouseSelect.style.display = 'none';
+                warehouseManual.style.display = 'block';
+                warehouseManual.required = true;
+            }
+        } else if (method === 'address') {
+            addressContainer.style.display = 'block';
+            addressInput.required = true;
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const pricePerItem = 500;
+        
+        // Элементы формы
+        const form = document.getElementById('stimulator-order-form');
+        const qtyInput = document.getElementById('qty-input');
+        const qtyMinus = document.getElementById('qty-minus');
+        const qtyPlus = document.getElementById('qty-plus');
+        const totalPriceDisplays = document.querySelectorAll('.total-price-val');
+        const deliveryMethodInput = document.getElementById('delivery-method');
+        const deliveryOpts = document.querySelectorAll('.stim-delivery-opt');
+        const paymentMethodInput = document.getElementById('payment-method');
+        const paymentOpts = document.querySelectorAll('.stim-payment-opt');
+        
+        const citySearchInput = document.getElementById('np-city-search');
+        const cityRefInput = document.getElementById('np-city-ref');
+        const cityNameInput = document.getElementById('np-city-name');
+        const citySuggestions = document.getElementById('np-city-suggestions');
+        const citySpinner = document.getElementById('np-city-spinner');
+        
+        const warehouseSelect = document.getElementById('np-warehouse-select');
+        const warehouseManual = document.getElementById('np-warehouse-manual');
+        const addressInput = document.getElementById('delivery-address');
+        const phoneInput = document.getElementById('client-phone');
+        
+        const submitBtn = document.getElementById('submit-btn');
+        const formStatus = document.getElementById('form-status');
+        const npApiKeyInput = document.getElementById('np-api-key');
+
+        let debounceTimeout;
+
+        // Маска для ввода номера телефона (+38 (0XX) XXX-XX-XX)
+        if (phoneInput) {
+            phoneInput.addEventListener('input', function(e) {
+                let input = e.target.value.replace(/\D/g, ''); // оставляем только цифры
+                
+                // Если ввод начинается с 38, убираем ее, так как мы автоматически ее добавим
+                if (input.startsWith('38')) {
+                    input = input.substring(2);
+                }
+                
+                // Ограничиваем длину (10 цифр максимум: 0XXXXXXXXX)
+                input = input.substring(0, 10);
+                
+                if (input.length === 0) {
+                    e.target.value = '';
+                    return;
+                }
+                
+                // Принудительно устанавливаем 0 первой цифрой
+                if (input[0] !== '0') {
+                    input = '0' + input;
+                }
+                
+                let formatted = '+38 ';
+                
+                if (input.length > 0) {
+                    formatted += '(' + input.substring(0, 3);
+                }
+                if (input.length > 3) {
+                    formatted += ') ' + input.substring(3, 6);
+                }
+                if (input.length > 6) {
+                    formatted += '-' + input.substring(6, 8);
+                }
+                if (input.length > 8) {
+                    formatted += '-' + input.substring(8, 10);
+                }
+                
+                e.target.value = formatted;
+            });
+        }
+
+        // 1. Инициализация языка (по умолчанию украинский)
+        let savedLang = localStorage.getItem('stim_lang') || 'ua';
+        setLanguage(savedLang);
+
+        // Слушатели переключателя языков
+        document.querySelectorAll('.stim-lang-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const lang = this.getAttribute('data-change-lang');
+                setLanguage(lang);
+                
+                // Перезагружаем склады при смене языка, если город уже выбран
+                if (cityRefInput.value) {
+                    loadWarehouses(cityRefInput.value);
+                }
+            });
+        });
+
+        // 2. Управление количеством и ценой
+        function updatePrice() {
+            const qty = parseInt(qtyInput.value) || 1;
+            totalPriceDisplays.forEach(el => el.textContent = qty * pricePerItem);
+        }
+
+        qtyMinus.addEventListener('click', () => {
+            let val = parseInt(qtyInput.value) || 1;
+            if (val > 1) {
+                qtyInput.value = val - 1;
+                updatePrice();
+            }
+        });
+
+        qtyPlus.addEventListener('click', () => {
+            let val = parseInt(qtyInput.value) || 1;
+            qtyInput.value = val + 1;
+            updatePrice();
+        });
+
+        // 3. Переключение способов доставки
+        deliveryOpts.forEach(opt => {
+            opt.addEventListener('click', function() {
+                deliveryOpts.forEach(o => o.classList.remove('active'));
+                this.classList.add('active');
+                
+                const method = this.getAttribute('data-method');
+                deliveryMethodInput.value = method;
+                
+                updateDeliveryFieldsUI(method);
+            });
+        });
+
+        // Переключение способов оплаты
+        paymentOpts.forEach(opt => {
+            opt.addEventListener('click', function() {
+                paymentOpts.forEach(o => o.classList.remove('active'));
+                this.classList.add('active');
+                
+                const method = this.getAttribute('data-method');
+                paymentMethodInput.value = method;
+            });
+        });
+
+        // 4. Автокомплит городов Новой Почты
+        citySearchInput.addEventListener('input', function() {
+            const query = this.value.trim();
+            const apiKey = npApiKeyInput.value.trim();
+            
+            // Если API ключа нет, просто дублируем ввод в скрытое поле имени города
+            if (!apiKey) {
+                cityNameInput.value = query;
+                cityRefInput.value = '';
+                return;
+            }
+
+            clearTimeout(debounceTimeout);
+            citySuggestions.innerHTML = '';
+            citySuggestions.style.display = 'none';
+
+            if (query.length < 2) return;
+
+            citySpinner.style.display = 'block';
+
+            debounceTimeout = setTimeout(() => {
+                fetch('https://api.novaposhta.ua/v2.0/json/', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        apiKey: apiKey,
+                        modelName: 'Address',
+                        calledMethod: 'getCities',
+                        methodProperties: {
+                            FindByString: query,
+                            Limit: 10
+                        }
+                    })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    citySpinner.style.display = 'none';
+                    if (data.success && data.data && data.data.length > 0) {
+                        citySuggestions.innerHTML = '';
+                        citySuggestions.style.display = 'block';
+                        
+                        data.data.forEach(city => {
+                            const div = document.createElement('div');
+                            div.className = 'np-suggestion-item';
+                            // Формат: Город (Область/Район)
+                            let areaInfo = city.AreaDescription ? `, ${city.AreaDescription} обл.` : '';
+                            div.textContent = `${city.Description}${areaInfo}`;
+                            
+                            div.addEventListener('click', () => {
+                                citySearchInput.value = city.Description;
+                                cityRefInput.value = city.Ref;
+                                cityNameInput.value = city.Description;
+                                citySuggestions.style.display = 'none';
+                                
+                                // Загружаем склады для выбранного города
+                                loadWarehouses(city.Ref);
+                            });
+                            
+                            citySuggestions.appendChild(div);
+                        });
+                    }
+                })
+                .catch(err => {
+                    citySpinner.style.display = 'none';
+                    console.error('Ошибка API Новой Почты:', err);
+                });
+            }, 300);
+        });
+
+        // Скрываем подсказки при клике вне
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.np-autocomplete-container')) {
+                citySuggestions.style.display = 'none';
+            }
+        });
+
+        // 5. Загрузка складов
+        function loadWarehouses(cityRef) {
+            const apiKey = npApiKeyInput.value.trim();
+            const method = deliveryMethodInput.value;
+            
+            if (!apiKey || method === 'address') return;
+            
+            warehouseSelect.innerHTML = `<option value="">${currentLang === 'en' ? 'Loading...' : (currentLang === 'ru' ? 'Загрузка...' : 'Завантаження...')}</option>`;
+            warehouseSelect.style.display = 'block';
+            warehouseManual.style.display = 'none';
+
+            fetch('https://api.novaposhta.ua/v2.0/json/', {
+                method: 'POST',
+                body: JSON.stringify({
+                    apiKey: apiKey,
+                    modelName: 'Address',
+                    calledMethod: 'getWarehouses',
+                    methodProperties: {
+                        CityRef: cityRef,
+                        Limit: 500
+                    }
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success && data.data && data.data.length > 0) {
+                    let warehouses = data.data;
+                    
+                    // Фильтруем отделения / почтоматы
+                    if (method === 'postomat') {
+                        warehouses = warehouses.filter(w => w.Description.toLowerCase().includes('поштомат') || w.Description.toLowerCase().includes('postomat'));
+                    } else {
+                        warehouses = warehouses.filter(w => !w.Description.toLowerCase().includes('поштомат') && !w.Description.toLowerCase().includes('postomat'));
+                    }
+                    
+                    if (warehouses.length === 0) {
+                        const noDataText = method === 'postomat' 
+                            ? (currentLang === 'en' ? 'No lockers found' : (currentLang === 'ru' ? 'Почтоматов не найдено' : 'Поштоматів не знайдено'))
+                            : (currentLang === 'en' ? 'No branches found' : (currentLang === 'ru' ? 'Отделений не найдено' : 'Відділень не знайдено'));
+                        warehouseSelect.innerHTML = `<option value="">${noDataText}</option>`;
+                        return;
+                    }
+                    
+                    const selectPlaceholder = method === 'postomat' ? translations[currentLang].warehouseSelectLocker : translations[currentLang].warehouseSelectBranch;
+                    warehouseSelect.innerHTML = `<option value="">${selectPlaceholder}</option>`;
+                    
+                    warehouses.forEach(w => {
+                        const opt = document.createElement('option');
+                        opt.value = w.Description;
+                        opt.textContent = w.Description;
+                        warehouseSelect.appendChild(opt);
+                    });
+                    warehouseSelect.required = true;
+                    warehouseManual.required = false;
+                } else {
+                    switchToManualWarehouse();
+                }
+            })
+            .catch(err => {
+                console.error('Ошибка загрузки отделений:', err);
+                switchToManualWarehouse();
+            });
+        }
+
+        function switchToManualWarehouse() {
+            warehouseSelect.style.display = 'none';
+            warehouseSelect.required = false;
+            warehouseManual.style.display = 'block';
+            warehouseManual.required = true;
+        }
+
+        // Если город вводится вручную без автокомплита
+        citySearchInput.addEventListener('change', function() {
+            cityNameInput.value = this.value;
+        });
+
+        // 6. Отправка формы по AJAX
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const phoneVal = document.getElementById('client-phone').value;
+            if (phoneVal.length < 19) {
+                const errorText = currentLang === 'en' 
+                    ? 'Please enter a valid phone number: +38 (0XX) XXX-XX-XX' 
+                    : (currentLang === 'ru' 
+                        ? 'Пожалуйста, введите корректный номер телефона: +38 (0XX) XXX-XX-XX' 
+                        : 'Будь ласка, введіть коректний номер телефону: +38 (0XX) XXX-XX-XX');
+                
+                formStatus.textContent = errorText;
+                formStatus.className = 'stim-form-status error';
+                formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return false;
+            }
+            
+            submitBtn.disabled = true;
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = `<span>${translations[currentLang].submitBtnSending}</span>`;
+            
+            formStatus.style.display = 'none';
+            formStatus.className = 'stim-form-status';
+
+            // Данные для отправки
+            const formData = {
+                name: document.getElementById('client-name').value,
+                phone: document.getElementById('client-phone').value,
+                quantity: qtyInput.value,
+                delivery_method: deliveryMethodInput.value,
+                payment_method: paymentMethodInput.value,
+                city: cityNameInput.value || citySearchInput.value,
+                comment: document.getElementById('order-comment').value,
+                lang: currentLang.toUpperCase()
+            };
+
+            // Добавляем детали доставки
+            if (formData.delivery_method === 'address') {
+                formData.address = addressInput.value;
+                formData.warehouse = '';
+            } else {
+                formData.address = '';
+                if (warehouseSelect.style.display !== 'none') {
+                    formData.warehouse = warehouseSelect.value;
+                } else {
+                    formData.warehouse = warehouseManual.value;
+                }
+            }
+
+            // Элементы модального окна
+            const successModal = document.getElementById('success-modal');
+            const modalCloseBtn = document.getElementById('modal-close-btn');
+
+            function openModal() {
+                if (successModal) successModal.classList.add('active');
+            }
+
+            function closeModal() {
+                if (successModal) successModal.classList.remove('active');
+            }
+
+            if (modalCloseBtn) {
+                modalCloseBtn.addEventListener('click', closeModal);
+            }
+
+            if (successModal) {
+                successModal.addEventListener('click', function(e) {
+                    if (e.target === successModal) {
+                        closeModal();
+                    }
+                });
+            }
+
+            // AJAX запрос к обработчику order-stimulyator.php
+            fetch('./order-stimulyator.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return res.json();
+            })
+            .then(data => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+
+                if (data.success) {
+                    // Открываем модальное окно об успехе
+                    openModal();
+
+                    formStatus.textContent = translations[currentLang].successMessage;
+                    formStatus.className = 'stim-form-status success';
+                    form.reset();
+                    qtyInput.value = 1;
+                    updatePrice();
+                    cityRefInput.value = '';
+                    updateDeliveryFieldsUI('warehouse');
+                } else {
+                    formStatus.textContent = data.message || translations[currentLang].errorMessage;
+                    formStatus.className = 'stim-form-status error';
+                    formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            })
+            .catch(err => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+                console.error('Ошибка отправки:', err);
+                formStatus.textContent = translations[currentLang].errorMessage;
+                formStatus.className = 'stim-form-status error';
+                formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
